@@ -9,7 +9,7 @@
             "type": "go",
             "request": "launch",
             "mode": "auto",
-            "program": "168-excel-sheet-column-title.go"
+            "program": "organize-files.go"
         }
     ]
 }
