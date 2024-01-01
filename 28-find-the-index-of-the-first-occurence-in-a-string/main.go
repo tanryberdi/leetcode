@@ -13,7 +13,7 @@ func Index(haystack, needle string) int {
 	}
 
 	// Loop over all indexes in s.
-	for i := 0; i < len(haystack)-len(needle); i++ {
+	for i := 0; i < len(haystack)-len(needle)+1; i++ {
 		// Compare s[i:len(find)] to find.
 		if haystack[i:i+len(needle)] == needle {
 			// If we found it, return the index.
