@@ -3,8 +3,12 @@ package main
 import "fmt"
 
 func summaryRanges(nums []int) []string {
+	if len(nums) == 0 {
+		return []string{}
+	}
 	var res []string
-	for i := 0; i < len(nums); i++ {
+	i := 0
+	for {
 		j := i
 		for j+1 < len(nums) && nums[j+1] == nums[j]+1 {
 			j++
@@ -14,7 +18,13 @@ func summaryRanges(nums []int) []string {
 		} else {
 			res = append(res, fmt.Sprintf("%d", nums[i]))
 		}
-		i = j
+
+		// We need to move i to j+1
+		i = j + 1
+
+		if i == len(nums) {
+			break
+		}
 	}
 	return res
 }
